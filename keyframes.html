@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+      }
+
+      .sun {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        animation: rotateSun 10s linear infinite;
+      }
+
+      .earth {
+        width: 50px;
+        height: 50px;
+        background-color: #00aaff;
+        border-radius: 50%;
+        position: absolute;
+        animation: orbitEarth 5s linear infinite;
+      }
+
+      .moon {
+        width: 20px;
+        height: 20px;
+        background-color: #aaa;
+        border-radius: 50%;
+        position: absolute;
+        animation: orbitMoon 2s linear infinite;
+      }
+
+      @keyframes rotateSun {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes orbitEarth {
+        from {
+          transform: rotate(0deg) translateX(100px) rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg) translateX(100px) rotate(-360deg);
+        }
+      }
+
+      @keyframes orbitMoon {
+        from {
+          transform: rotate(0deg) translateX(180px) rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg) translateX(180px) rotate(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sun"></div>
+    <div class="earth"></div>
+    <div class="moon"></div>
+  </body>
+</html>
